@@ -166,20 +166,20 @@ outputs:
         - libprotobuf =3.5.2    # [not win]
 
     test:
-      requires:
-        - {{ compiler('cxx') }}
-        - cmake
-      files:
-        - test-cmake/CMakeLists.txt
-        - test-cmake/DisplayImage.cpp
-        - test.cpp
+      # requires:
+      #   - {{ compiler('cxx') }}
+      #   - cmake
+      # files:
+      #   - test-cmake/CMakeLists.txt
+      #   - test-cmake/DisplayImage.cpp
+      #   - test.cpp
       commands:
-        - pushd test-cmake
-        - cmake . -DOpenCV_STATIC=OFF -DOpenCV_SHARED=ON -G"Visual Studio 14 2015"        # [win32]
-        - cmake . -DOpenCV_STATIC=OFF -DOpenCV_SHARED=ON -G"Visual Studio 14 2015 Win64"  # [win64]
-        - cmake . -DOpenCV_STATIC=OFF -DOpenCV_SHARED=ON                                  # [not win]
-        - cmake --build . --config Release
-        - popd
+        # - pushd test-cmake
+        # - cmake . -DOpenCV_STATIC=OFF -DOpenCV_SHARED=ON -G "Visual Studio 14 2015"        # [win32]
+        # - cmake . -DOpenCV_STATIC=OFF -DOpenCV_SHARED=ON -G "Visual Studio 14 2015 Win64"  # [win64]
+        # - cmake . -DOpenCV_STATIC=OFF -DOpenCV_SHARED=ON                                  # [not win]
+        # - cmake --build . --config Release
+        # - popd
         # Verify dynamic libraries.
         # "bioinspired", Not working in 3.1.0
         {% set opencv_libs = [
